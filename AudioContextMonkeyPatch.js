@@ -133,5 +133,12 @@ BiquadFilterNode.type and OscillatorNode.type.
       };
     }
   }
+    
+  // just a stub for IE
+  if(!window.hasOwnProperty('AudioContext')) {
+      window.AudioContext = function(){
+          console.log("Stubbing audio context");
+      };
+  }
 }(window));
 
